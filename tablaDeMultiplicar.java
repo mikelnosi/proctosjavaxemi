@@ -9,17 +9,16 @@ package com.mycompany.proyectosjavaxemi;
  * @author mikel1
  */
 public class tablaDeMultiplicar {
-     public static void main(String[] args) {
-         tablaMultiplicar();
-     }
-      public static int tablaMultiplicar() {
-          int multiplicador;
-          int Multiplicando =1;
-for(multiplicador = 1; multiplicador <=10; multiplicador++){
-    System.out.println(Multiplicando + " X " + multiplicador + " = " + Multiplicando * multiplicador );
-}
-         return 0;// me pide que lo ponga no se porque
-          
-      }
-    
+    public static void main(String[] args) {
+        tablaMultiplicar();
+    }
+
+    public static void tablaMultiplicar() {
+        int multiplicador;
+        int Multiplicando = 12;
+        for (multiplicador = 1; multiplicador <= 10; multiplicador++) {
+            System.out.println(Multiplicando + " x " + multiplicador + " = " + Multiplicando * multiplicador);
+        }
+    }
+
 }

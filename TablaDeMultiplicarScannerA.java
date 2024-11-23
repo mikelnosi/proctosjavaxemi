@@ -12,20 +12,18 @@ import java.util.Scanner;
  */
 public class TablaDeMultiplicarScannerA {
     public static void main(String[] args) {
-         tablaMultiplicar();
-     }
-      public static int tablaMultiplicar() {
-           Scanner teclado = new Scanner(System.in);
+        tablaMultiplicar();
+    }
+
+    public static void tablaMultiplicar() {
+        Scanner teclado = new Scanner(System.in);
 
         System.out.print("Introduce un número: ");
-        int Multiplicando = teclado.nextInt();
+        int numElegido = teclado.nextInt();
         teclado.close();
-          int multiplicador;
-for(multiplicador = 1; multiplicador <=10; multiplicador++){
-    System.out.println(Multiplicando + " X " + multiplicador + " = " + Multiplicando * multiplicador );
-}
-         return 0;// me pide que lo ponga no se porque
-          
-      }
-    
-}
+        int variable;
+        for (variable = 1; variable <= 10; variable++) {
+            System.out.println(numElegido + " x " + variable + " = " + numElegido * variable);
+        }
+    }
+} 
