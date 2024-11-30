@@ -5,18 +5,49 @@ public class calculadora {
 
     public static void main(String[] args) {
 
-        double num1 = introducirDouble();
+        boolean salir = false;
 
-        menu();
-        String operacion = introducirString();
+        System.out.println("BIENVENIDO A LA CALCULADORA Mikel");
 
-        double num2 = introducirDouble();
+        while (!salir) {
+            double num1 = introducirDouble();
+            double num2 = 0;
 
-        double resultado = switch1(operacion, num1, num2);
+            menu();
+            String operacion = introducirString();
 
-        System.out.print("\nEl resultado es: " + resultado);
+            if (!operacion.equals("raizcuadrada") && !operacion.equals("7") && !operacion.equals("raiz")) {
+                num2 = introducirDouble();
+            }
+
+            double resultado = switch1(operacion, num1, num2);
+
+            System.out.print("\nEl resultado es: " + resultado);
+
+            salir = eleccionSalir();
+
+        }
 
         teclado.close();
+    }
+
+    private static boolean eleccionSalir() {
+        boolean salirEleccion = false;
+        while (!salirEleccion) {
+            System.out.println("\n¿Desea realizar otra operacion? (S/N)");
+            String eleccion = introducirString().toLowerCase();
+
+            if (eleccion.equals("n") || eleccion.equals("no")) {
+                salirEleccion = true;
+                return true;
+            } else if (eleccion.equals("s") || eleccion.equals("si")) {
+                salirEleccion = true;
+                return false;
+            } else {
+                System.out.println("Opcion no valida, solamente acepta si o no");
+            }
+        }
+        return false;
     }
 
     private static double introducirDouble() {
@@ -42,7 +73,7 @@ public class calculadora {
 
         while (!valido) {
             System.out.print("Introduce un texto que no este vacio: ");
-            texto = teclado.next();
+            texto = teclado.next().toLowerCase();
             if (!texto.trim().isEmpty()) {
                 valido = true;
             } else {
@@ -53,8 +84,14 @@ public class calculadora {
     }
 
     private static void menu() {
-        System.out.print("\nElige la operacion a realizar: ");
-        System.out.print("\n1. Suma\n2. Resta\n3. Multiplicacion\n4. Division\n");
+        System.out.println("\nElige la operacion a realizar: ");
+        System.out.println("1. Suma");
+        System.out.println("2. Resta");
+        System.out.println("3. Multiplicacion");
+        System.out.println("4. Division");
+        System.out.println("5. Resto");
+        System.out.println("6. Elevado");
+        System.out.println("7. Raiz Cuadrada");
     }
 
     private static double division(double a, double b) {
@@ -84,9 +121,26 @@ public class calculadora {
         return resultado;
     }
 
+    private static double elevado(double a, double b) {
+        double resultado = 0;
+        resultado = Math.pow(a, b);
+        return resultado;
+    }
+
+    private static double RaizCuadrada(double a) {
+        double resultado = 0;
+        resultado = Math.sqrt(a);
+        return resultado;
+    }
+
+    private static double resto(double a, double b) {
+        double resultado = 0;
+        resultado = a % b;
+        return resultado;
+    }
+
     private static double switch1(String operacion, double num1, double num2) {
         switch (operacion) {
-            case "Suma":
             case "suma":
             case "sumar":
             case "+":
@@ -95,18 +149,29 @@ public class calculadora {
             case "2":
             case "resta":
             case "restar":
-            case "Restar":
                 return resta(num1, num2);
             case "3":
             case "multiplicar":
             case "multiplicacion":
-            case "Multiplicar":
                 return multiplicar(num1, num2);
             case "division":
             case "dividir":
             case "/":
             case "4":
                 return division(num1, num2);
+            case "resto":
+            case "%":
+            case "5":
+                return resto(num1, num2);
+            case "elevado":
+            case "potencia":
+            case "6":
+            case "^":
+                return elevado(num1, num2);
+            case "raizcuadrada":
+            case "7":
+            case "raiz":
+                return RaizCuadrada(num1);
             default:
                 return 0;
         }
