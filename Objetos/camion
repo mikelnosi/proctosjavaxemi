@@ -1,0 +1,92 @@
+ublic class camion {
+
+    // ATRIBUTOS
+    private String nombre;
+    private int ruedas;
+    private int puertas;
+    private int retrovisores;
+    private String motor;
+    private String combustible;
+    private String color;
+    //  // CONSTRUCTOR CON PARAMETROS
+    public camion(String nombre, int ruedas, int puertas, int retrovisores, String motor, String combustible, String color){
+        this.nombre = nombre;
+        this.ruedas = ruedas;
+        this.puertas = puertas;
+        this.retrovisores = retrovisores;
+        this.motor = motor;
+        this.combustible = combustible;
+        this.color = color;
+    }
+    //contructor vacio
+    public camion(){
+
+    }
+    //METODOS GETTER Y SETTER
+    // METODOS GETTER Y SETTER
+    public String getNombre() {
+        return nombre;
+    }
+
+    public void setNombre(String nombre) {
+        this.nombre = nombre;
+    }
+    public int getRuedas() {
+        return ruedas;
+    }
+
+    public int setRuedas(int ruedas) {
+        this.nombre = ruedas;
+    }
+    public int getPuertas(int puertas) {
+        return puertas;
+    }
+
+    public int setPuertas(int puertas) {
+        this.nombre = puertas;
+    }
+    public String getRetrovisores() {
+        return retrovisores;
+    }
+
+    public void setRetrovisores(string retrovisores) {
+        this.nombre = retrovisores;
+    }
+    public String getMotorç() {
+        return motor;
+    }
+
+    public void setNombre(String motor) {
+        this.nombre = motor;
+    }
+    public String getCombustible() {
+        return combustible;
+    }
+
+    public void setNombre(String combustible) {
+        this.nombre = combustible;
+    }
+    public String getColor() {
+        return color;
+    }
+
+    public void setColor(String color) {
+        this.nombre = color;
+    }
+    //metodo string
+    @Override
+    public String toString(){
+      return "coche{"+ "
+      nombre=" + nombre +
+      " ruedas=" + ruedas +
+      "puertas=" + puertas +
+      "retrovisores=" + retrovisores +
+      "motor=" + motor+ 
+      "combustible=" + combustible +
+      "color=" + color +
+      '}';
+    }
+
+  }
+  
+
