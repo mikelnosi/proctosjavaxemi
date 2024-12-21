@@ -1,3 +1,5 @@
+package Objetos;
+
 public class Main {
     public static void main(String[] args) {
 
@@ -27,7 +29,7 @@ public class Main {
 
         // MOSTRAMOS EL ARRAY DE COCHES DEL GARAJE
         // opel.mostrarCoche();
-
+/*
         System.out.println(citroen.toString());
 
         // LE DAMOS EL COLOR AZUL A CITROEN SIN PARAMETROS
@@ -67,11 +69,11 @@ public class Main {
        System.out.println("motornew yamaha"+yamaha.toString());
        //fin cambio de motor yamaha motos
        //fin visualizar motos
-
+*/
         //fin crear motos
         //creamos camiones
-        Camion man = new Camion("man1",12, 2, "625 cv ","diesel", "rojo");
-          // CREAMOS UNA camion SIN PARAMETROS
+        Camion man = new Camion("man1", "Verde", "diesel", "625 cv ",2, 2, 18);
+            // CREAMOS UNA camion SIN PARAMETROS
           Camion mercedes = new  Camion();
           // visuliazar camion mercesdes sin parametros
           System.out.println("camion merces sin parametros "+mercedes.toString());
@@ -86,17 +88,25 @@ public class Main {
        mercedes.setMotor("diesel");
        mercedes.setColor("azul");
          //visualizar estring lleno de valores merces
-         System.out.println("moto honda lleno de parametros "+mercedes.toString());
-          // CREAMOS UN CAMION
-        camion volvo = new Camion("volvo1", 18, 2, 2, "615 cv", "diesel", "negro ");
+         System.out.println("Camion de mercedes lleno de parametros "+mercedes.toString());
+          // CREAMOS DOS CAMIONES
+        Camion volvo = new Camion("volvo1", "Rojo", "Diesel", "500 cv", 3, 2, 16);
+        Camion iveco = new Camion("iveco1", "Azul", "Diesel", "450 cv", 2, 2, 20);
 
-        // CREAMOS UN CAMION
-        camion iveco = new camion("iveco1", 18, 2, 1, "600 CV", "diesel", "Rojo ");
         //METEMOS EL ARRAY DE CAMIONES AL GARAJE
-        volvo.setCoche(arrayCoches);
+        // CREAMOS UN COCHE
+        Camion[] arrayCamiones = new Camion[5];
+        renault.setCamion(arrayCamiones);
 
-        // MOSTRAMOS EL ARRAY DE COCHES DEL GARAJE
-         volvo.mostrarCamion();
+        // MOSTRAMOS EL ARRAY DE Camiones DEL GARAJE que hemos llamado RENAULT
+
+        renault.agregarCamion(0, volvo);
+        renault.agregarCamion(1, iveco);
+        renault.agregarCamion(2, man);
+        renault.agregarCamion(3, null);    // Posición vacía
+        renault.agregarCamion(4, null);
+
+        renault.mostrarCamion();
 
 
         //me salen errores

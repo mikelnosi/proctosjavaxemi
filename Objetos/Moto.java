@@ -1,3 +1,5 @@
+package Objetos;
+
 public class Moto {
     // crear atributos
     private String nombre;

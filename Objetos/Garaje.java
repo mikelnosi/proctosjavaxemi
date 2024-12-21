@@ -1,3 +1,5 @@
+package Objetos;
+
 public class Garaje {
     // ATRIBUTOS
     private String nombre; //
@@ -5,7 +7,8 @@ public class Garaje {
     private int horario; // horario de apertura
     private Coche coche[]; // cantidad de coches que puede almacenar *Array de coches*
     private Moto moto[]; // cantidad de coches que puede almacenar *Array de coches*
-    private Moto camion[]; // cantidad de coches que puede almacenar *Array de camion*
+    private Camion camiones[]; // cantidad de coches que puede almacenar *Array de camion*
+
     /*
      * añadimos el atributo de array de motos
      * añadimos al constructor con parametros el array de motos
@@ -24,7 +27,7 @@ public class Garaje {
         this.horario = 8;
         this.coche = new Coche[capacidad];
         this.moto = new Moto[capacidad];
-        this.camion = new Camion[capacidad];
+        this.camiones = new Camion[capacidad];
     }
 
     // METODOS GETTER Y SETTER
@@ -57,17 +60,21 @@ public class Garaje {
     public void setCoche(Coche[] coche) {
         this.coche = coche;
     }
-    public Moto[] getMoto(){
+
+    public Moto[] getMoto() {
         return moto;
     }
-    public void setMoto(Moto[] moto){
+
+    public void setMoto(Moto[] moto) {
         this.moto = moto;
     }
-    public void getCoche(){
-        return camion;
+
+    public Camion[] getCamion() {
+        return camiones;
     }
-    public void setCamion(camion[]){
-        this camion = camion;
+
+    public void setCamion(Camion[] camion) {
+        this.camiones = camion;
     }
 
     // METODO PARA MOSTRAR TODOS LOS COCHES QUE HAYA EN EL GARAJE
@@ -77,19 +84,36 @@ public class Garaje {
             System.out.println(coche[i].toString());
         }
     }
-    //METODO PARA MOSTRAR TODOS LOS MOTOS QUE HAYA EN EL GARAJE 'ARRAY MOTOS'
-    public void mostrarMoto(){
-        System.out.println("las motos que hay en el garaje son");
-        for(int i = 0; i < moto.length;i++){
-            System.out.println( moto[i].toString());
 
+    //METODO PARA MOSTRAR TODOS LOS MOTOS QUE HAYA EN EL GARAJE 'ARRAY MOTOS'
+    public void mostrarMoto() {
+        System.out.println("las motos que hay en el garaje son");
+        for (int i = 0; i < moto.length; i++) {
+            if(moto[i] != null) {
+                System.out.println(moto[i].toString());
+            } else {
+                System.out.println("Posición " + i + ": Vacía.");
+            }
         }
     }
+
     //metodo mostrar array camiones
-    public void mostrarCamion(){
-        System.out.println("camioses que hay el garaje son");
-        for(int i =0; i< camion.length;i++){
-            System.out.println(camiopn[i].toString);
+    public void mostrarCamion() {
+        System.out.println("Camiones que hay en el garaje:");
+        for (int i = 0; i < camiones.length; i++) {
+            if (camiones[i] != null) {
+                System.out.println(camiones[i].toString());
+            } else {
+                System.out.println("Posición " + i + ": Vacía.");
+            }
+        }
+    }
+
+    public void agregarCamion(int posicion, Camion camion) {
+        if (posicion >= 0 && posicion < camiones.length) {
+            camiones[posicion] = camion;
+        } else {
+            System.out.println("Posición fuera de rango.");
         }
     }
 

@@ -1,6 +1,6 @@
 package Objetos;
 
-public class Coche {
+public class Camion {
 
     // ATRIBUTOS
     private String nombre;
@@ -11,23 +11,19 @@ public class Coche {
     private String combustible;
     private String color;
 
-    // CONSTRUCTOR CON PARAMETROS
-    public Coche(String nombre, int ruedas, int puertas, int retrovisores, String motor, String combustible,
-            String color) {
-        this.nombre = nombre;
-        this.ruedas = ruedas;
-        this.puertas = puertas;
-        this.retrovisores = retrovisores;
-        this.motor = motor;
-        this.combustible = combustible;
-        this.color = color;
+    @Override
+    public String toString() {
+        return "Camion{" +
+                "nombre='" + nombre + '\'' +
+                ", ruedas=" + ruedas +
+                ", puertas=" + puertas +
+                ", retrovisores=" + retrovisores +
+                ", motor='" + motor + '\'' +
+                ", combustible='" + combustible + '\'' +
+                ", color='" + color + '\'' +
+                '}';
     }
 
-    // CONSTRUCTOR VACIO
-    public Coche() {
-    }
-
-    // METODOS GETTER Y SETTER
     public String getNombre() {
         return nombre;
     }
@@ -84,11 +80,16 @@ public class Coche {
         this.color = color;
     }
 
-    // METODO TO STRING
-    @Override
-    public String toString() {
-        return String.format(
-                "Nombre= %s, ruedas= %d, puertas= %d, retrovisores= %d, motor= %s, combustible= %s, color= %s",
-                nombre, ruedas, puertas, retrovisores, motor, combustible, color);
+    public Camion(String nombre, String color, String combustible, String motor, int retrovisores, int puertas, int ruedas) {
+        this.nombre = nombre;
+        this.color = color;
+        this.combustible = combustible;
+        this.motor = motor;
+        this.retrovisores = retrovisores;
+        this.puertas = puertas;
+        this.ruedas = ruedas;
+    }
+
+    public Camion() {
     }
 }
